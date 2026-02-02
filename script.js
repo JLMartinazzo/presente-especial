@@ -49,6 +49,12 @@ botNao.addEventListener("mouseover", () => {
     }
 })
 
+//caso esteja no mobile
+botNao.addEventListener("touchstart", () => {
+    botNao.dispatchEvent(new Event("mouseover"));
+});
+
+
 //"trocar" de tela quando clicar no sim
 botSim.addEventListener("click", ()=>{
     tela1.classList.add("hidden");
