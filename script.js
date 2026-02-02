@@ -45,6 +45,10 @@ window.addEventListener("resize", posicionarSetas);
 function moverBotao() {
     const margem = 15;
 
+    if (navigator.vibrate) {
+        navigator.vibrate(50);
+    }
+
     const maxX = window.innerWidth - botNao.offsetWidth - margem;
     const maxY = window.innerHeight - botNao.offsetHeight - margem;
 
@@ -80,7 +84,7 @@ botNao.addEventListener("touchstart", () => {
 
 
 //"trocar" de tela quando clicar no sim
-botSim.addEventListener("click", ()=>{
+botSim.addEventListener("click", () => {
     tela1.classList.add("hidden");
     tela2.classList.remove("hidden");
 
