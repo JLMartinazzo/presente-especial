@@ -20,34 +20,60 @@ var quantNao = 0;
 //quando a tela é carrgada
 window.onload = () => {
     const simRect = botSim.getBoundingClientRect();
-
-    seta2.style.right = `${simRect.right +10}px`
-    seta.style.left = `${simRect.right +9}px`
     botNao.style.top = `${simRect.top + 75}px`;
 }
+
+function posicionarSetas() {
+    const simRect = botSim.getBoundingClientRect();
+    const buttonsRect = document.querySelector(".buttons").getBoundingClientRect();
+
+    const offsetLeft = simRect.left - buttonsRect.left;
+    const offsetRight = buttonsRect.right - simRect.right;
+
+    seta2.style.left = `${offsetLeft - 40}px`;
+    seta2.style.top = `${simRect.top - buttonsRect.top + 5}px`;
+
+    seta.style.right = `${offsetRight - 40}px`;
+    seta.style.top = `${simRect.top - buttonsRect.top + 5}px`;
+}
+
+window.addEventListener("load", posicionarSetas);
+window.addEventListener("resize", posicionarSetas);
+
+
 //função fugir 
-botNao.addEventListener("mouseover", () => {
+function moverBotao() {
+    const margem = 20; // distância mínima das bordas
 
-    const larguraTela = window.innerWidth;
-    const alturaTela = window.innerHeight;
+    const maxX = window.innerWidth - botNao.offsetWidth - margem;
+    const maxY = window.innerHeight - botNao.offsetHeight - margem;
 
-    const maxX = larguraTela - botNao.offsetWidth;
-    const maxY = alturaTela - botNao.offsetHeight;
+    const minX = margem;
+    const minY = margem;
 
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
+    const randomX = Math.random() * (maxX - minX) + minX;
+    const randomY = Math.random() * (maxY - minY) + minY;
 
     botNao.style.left = `${randomX}px`;
     botNao.style.top = `${randomY}px`;
 
     quantNao++;
 
-    //adicionar a setinha
-    if (quantNao >= 10) {
+    if (quantNao >= 5) {
         seta.classList.remove("hidden");
-        seta2.classList.remove("hidden")
+        seta2.classList.remove("hidden");
     }
-})
+}
+
+// Desktop
+botNao.addEventListener("mouseover", moverBotao);
+
+// Mobile
+botNao.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    moverBotao();
+});
+
 
 //caso esteja no mobile
 botNao.addEventListener("touchstart", () => {

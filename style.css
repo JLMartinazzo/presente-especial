@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 20px;
+    overflow: hidden;
 }
 
 .container {
@@ -29,6 +30,8 @@ h1 {
     display: flex;
     gap: 30px;
     justify-content: center;
+    position: relative;
+
 }
 
 .btn {
@@ -50,7 +53,7 @@ h1 {
 .nao {
     background-color: #fbc4d9;
     color: #7a003c;
-    position: absolute;
+    position: fixed;
     transition: left 0.2s ease, top 0.2s ease;
 }
 
