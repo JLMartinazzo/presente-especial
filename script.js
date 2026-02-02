@@ -43,7 +43,7 @@ window.addEventListener("resize", posicionarSetas);
 
 //função fugir 
 function moverBotao() {
-    const margem = 20; // distância mínima das bordas
+    const margem = 15;
 
     const maxX = window.innerWidth - botNao.offsetWidth - margem;
     const maxY = window.innerHeight - botNao.offsetHeight - margem;
@@ -65,14 +65,12 @@ function moverBotao() {
     }
 }
 
-// Desktop
-botNao.addEventListener("mouseover", moverBotao);
 
-// Mobile
-botNao.addEventListener("touchstart", (e) => {
+botNao.addEventListener("pointerdown", (e) => {
     e.preventDefault();
     moverBotao();
 });
+
 
 
 //caso esteja no mobile
