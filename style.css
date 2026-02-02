@@ -45,7 +45,7 @@ h1 {
 /* Botão SIM - verde pastel */
 .sim {
     background-color: #b7e4c7;
-    color: #1b4332;    
+    color: #1b4332;
 }
 
 /* Botão NÃO - rosa pastel */
@@ -93,7 +93,7 @@ h1 {
 .seta {
     position: absolute;
     font-size: 2.5rem;
-    color: red;    
+    color: red;
 }
 
 /* TELA DO SIM */
@@ -126,7 +126,7 @@ h1 {
     background: white;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s;
 }
 
@@ -138,15 +138,41 @@ h1 {
 }
 
 /* rotações suaves (efeito fofo) */
-.f1 { transform: rotate(-3deg); }
-.f2 { transform: rotate(2deg); }
-.f3 { transform: rotate(-2deg); }
-.f4 { transform: rotate(3deg); }
-.f5 { transform: rotate(-3deg); }
-.f6 { transform: rotate(2deg); }
-.f7 { transform: rotate(-2deg); }
-.f8 { transform: rotate(3deg); }
-.f9 { transform: rotate(-3deg);}
+.f1 {
+    transform: rotate(-3deg);
+}
+
+.f2 {
+    transform: rotate(2deg);
+}
+
+.f3 {
+    transform: rotate(-2deg);
+}
+
+.f4 {
+    transform: rotate(3deg);
+}
+
+.f5 {
+    transform: rotate(-3deg);
+}
+
+.f6 {
+    transform: rotate(2deg);
+}
+
+.f7 {
+    transform: rotate(-2deg);
+}
+
+.f8 {
+    transform: rotate(3deg);
+}
+
+.f9 {
+    transform: rotate(-3deg);
+}
 
 .foto:hover {
     transform: scale(1.05);
@@ -208,6 +234,7 @@ h1 {
         transform: scale(0.7);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
@@ -221,6 +248,7 @@ h1 {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -232,6 +260,7 @@ h1 {
     0% {
         transform: translateY(0) rotate(0deg);
     }
+
     100% {
         transform: translateY(110vh) rotate(360deg);
     }
@@ -287,7 +316,15 @@ h1 {
     }
 
     /* Remove rotações no mobile (fica mais limpo) */
-    .f1, .f2, .f3, .f4, .f5, .f6, .f7, .f8, .f9 {
+    .f1,
+    .f2,
+    .f3,
+    .f4,
+    .f5,
+    .f6,
+    .f7,
+    .f8,
+    .f9 {
         transform: none;
     }
 
