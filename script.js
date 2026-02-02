@@ -95,40 +95,16 @@ fotos.forEach((img) => {
     img.addEventListener("click", () => {
         modalImg.src = img.src;
 
-        if(img.src == "http://127.0.0.1:5500/fotos/foto2.jpg"){
-            imagemLegenda.textContent = "09/11/25 nós comendo no mamute"
+        const data = img.dataset.data;
+        const desc = img.dataset.desc;
 
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto1.jpg"){
-            imagemLegenda.textContent = "15/11/25 show do Gio juntos"
-
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto3.jpg"){
-            imagemLegenda.textContent = "26/09/25 juntos no sheik"
-
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto4.jpg"){
-            imagemLegenda.textContent = "13/09/25 o dia mais feliz da minnha vida"
-
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto5.jpg"){
-            imagemLegenda.textContent = "23/11/25 cataratas park hotel juntos"
-
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto6.jpg"){
-            imagemLegenda.textContent = "05/10/25 fomos ao DNJ"
-
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto7.jpg"){
-            imagemLegenda.textContent = "03/08/25 nosso segundo encontro no levelUp"
-
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto8.jpg"){
-            imagemLegenda.textContent = "01/02/26 fomos no aquaFoz"
-
-        }else if(img.src == "http://127.0.0.1:5500/fotos/foto9.jpg"){
-            imagemLegenda.textContent = "10/01/26 sua festa de aniversário"
-
-        }
-
+        imagemLegenda.textContent = data ? `${data} — ${desc}` : "";
         modalLegenda.textContent = img.nextElementSibling.textContent;
 
         modal.classList.remove("hidden");
     });
 });
+
 
 //fechar o modal
 fechar.addEventListener("click", () => {
